@@ -1,0 +1,42 @@
+/* Default styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+input {
+    border: 1px solid #cccccc;
+    outline: none;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+input:hover {
+    border: 1px solid #adadad;
+}
+
+input:focus {
+    border: 1px solid #239ce2;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Adjust layout for smaller screens */
+    }
+
+    label {
+        font-size: 0.9rem; /* Decrease font size for smaller screens */
+    }
+
+    input {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+    }
+}

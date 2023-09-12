@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  min-height: 85vh;
+  background-color: #f7f7f7 !important;
+  padding: 20px;
+}
+
+.contactHeader {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #000;
+  margin: 20px;
+}
+
+.formcontainer {
+  width: 50%;
+  order: 2;
+}
+
+.imagecontainer {
+  width: 50%;
+  order: 1;
+  margin: 50px;
+  border-radius: 10px;
+}
+
+.contact {
+  height: 400px;
+  width: 400px;
+}
+
+.formcontainer {
+  flex: 1;
+  padding: 20px;
+}
+
+.formcontainer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.formcontainer label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  height: 150px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+  
+  .formcontainer,
+  .imagecontainer {
+    width: 100%; /* Take up full width on smaller screens */
+    order: 0; /* Reset the order to maintain the document order */
+    margin:0;
+     /* Remove margin */
+  }
+}

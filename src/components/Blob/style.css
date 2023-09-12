@@ -1,0 +1,58 @@
+.animate{
+    animation: motion 2s ease-in-out infinite alternate-reverse both;
+}
+
+
+.blobeffect:hover{
+    transform: scale(0.95);
+    transition: 100ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    opacity: 0.75;
+}
+
+.adjust > .wrap{
+    position: relative;
+    top: 20%;
+}
+
+.underline {
+    text-decoration: none !important;
+    position: relative !important;
+  }
+  
+  .underline:after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    bottom: -4px;
+    /* center - (optional) use with adjusting width   */
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 40%;
+    background: #659edc;
+    -webkit-transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  /* optional hover classes used with anmiation */
+  .underline:hover:after {
+    width: 20%;
+    background: #0593b3 !important;
+  }
+
+    @keyframes motion{
+    0%{transform: translateY(10px);}
+    100%{transform: translateY(-10px);}
+}
+
+@-webkit-keyframes motion{
+    0%{transform: translateY(10px);}
+    100%{transform: translateY(-10px);}
+}
+
+@media (max-width:768px) {
+    .homeScreen{
+        display: inline !important;
+    }
+}
+   

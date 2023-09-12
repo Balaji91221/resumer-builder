@@ -1,0 +1,101 @@
+/* Navbar.css */
+/* Navbar.css */
+.logo{
+    width: 70px;
+    margin: 10px;
+    height: 40px;
+}
+.navbar-custom {
+    background-color:  #057fb3 ; /* Change the background color to your preferred color */
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: #fff; /* Change the text color to white or your preferred color */
+  }
+  
+  .navbar-custom .navbar-toggler-icon {
+    background-color: #fff; /* Change the color of the hamburger icon (if needed) */
+  }
+  
+.Navlink{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.Navlink:hover{
+    text-decoration: none;
+    color: #a3ffcc;
+    transition: 10ms;
+}
+
+.Navbar{
+    background-color: #05ADB3 !important;
+   
+}
+.logo1 {
+    font-size: 90px;
+    font-weight: 600; /* Use a valid font-weight value, e.g., 600 for semi-bold */
+}
+
+
+
+footer{
+    /*position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;*/
+    background-color: #8ec9e9;
+    font-weight: bolder;
+    color: #0582b3;
+}
+
+.rotate{
+    animation: rotate 2.5s infinite;
+}
+
+.social-icon{
+    color: #ffffff;
+}
+
+.social-icon:hover{
+    text-decoration: none;
+    color: #8EE2E9 !important;
+}
+
+.social-icon > .fa:hover{
+    transform: rotate(359deg);
+    transition: 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes rotate{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(359deg)}
+}
+
+@-webkit-keyframes rotate{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(359deg)}
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-custom {
+        background-color: #057fb3;
+        min-width: 90px; /* Change the background color for smaller screens */
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+        color: #fff; /* Change the text color to white for smaller screens */
+    }
+
+    .navbar-custom .navbar-toggler-icon {
+        background-color: #82ccf1;
+        height: 30px;
+         /* Change the color of the hamburger icon for smaller screens */
+    }
+}
+
+
+
+
