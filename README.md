@@ -1,35 +1,72 @@
-# Resume Builder 📄
+# Resume Builder
 
-**Resume Builder** is a simple and intuitive tool for crafting professional resumes. Whether you're a job seeker or updating your CV, Resume Builder has you covered.
+**Write your resume in structured sections and see the page take shape beside the editor.**
 
-## Features 🚀
+A React application with editable resume information, a live preview, accent-color selection, and a print workflow powered by `react-to-print`.
 
-- **Templates:** Choose from professionally designed templates.
-- **Editing:** Easily customize and arrange sections.
-- **Export:** Save your resume as a PDF.
-- **Tips and Samples:** Access helpful writing tips.
+[Website](https://resume-builder-balaji.netlify.app/) · [Run locally](#run-locally) · [Architecture](#architecture)
 
-## Usage 🛠
+## Why this project
 
-1. Visit the [Resume Builder Website](https://resume-builder-balaji.netlify.app/).
-2. Choose a template.
-3. Edit your resume.
-4. Download or share it.
+Formatting a resume can distract from writing it. This project separates structured input from presentation: the editor collects information while the preview handles the page layout, helping students and job seekers focus on their experience and projects.
 
-## Contribute 🤝
+## Included features
 
-If you'd like to contribute to this project, follow these steps:
+- Sections for basic information, work experience, projects, education, achievements, summary, and other details.
+- Editable section titles and repeated detail entries where supported.
+- Live resume preview and five accent-color choices.
+- A Download button that opens the browser print workflow.
+- Home, editor, about, and contact routes.
 
-- Fork this repository by clicking the "Fork" button at the top right of this page.
-- Clone the forked repository to your local machine using the following command:
-  ```bash
-  git clone https://github.com/Balaji91221/resumer-builder.git
+## Run locally
 
+Download and extract the repository. With Node.js and npm installed, run from the root:
 
-[![Performance](https://img.shields.io/badge/Performance-98-green)](https://developers.google.com/web/tools/lighthouse)
-[![Accessibility](https://img.shields.io/badge/Accessibility-94-brightgreen)](https://developers.google.com/web/tools/lighthouse)
-[![Best Practices](https://img.shields.io/badge/Best_Practices-100-blue)](https://developers.google.com/web/tools/lighthouse)
-[![SEO](https://img.shields.io/badge/SEO-83-orange)](https://developers.google.com/web/tools/lighthouse)
+```bash
+npm install
+npm start
+```
 
-## License 📝
-This project is licensed under the MIT License.
+Open `http://localhost:3000`; the resume editor is at `/body`.
+
+```bash
+npm run build
+```
+
+The Create React App build writes to `build/`. The website link above is retained from the repository's original README; hosting availability is separate from the source code.
+
+## Example workflow
+
+1. Open `/body` and fill in Basic Info.
+2. Add education, work, or project details in the editor.
+3. Review the page preview and choose an accent color.
+4. Select **Download**, then choose **Save as PDF** in the browser print dialog if available.
+
+The current editor stores resume information in React state. Save a copy before closing or refreshing the page; account storage and persistence are not implemented in this flow.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  Editor[Section editor] --> State[Resume state]
+  State --> Preview[Resume preview]
+  Color[Accent color] --> Preview
+  Preview --> Print[react-to-print]
+  Print --> Browser[Browser print or PDF dialog]
+```
+
+## Source guide
+
+| Path | Responsibility |
+| --- | --- |
+| [src/App.js](src/App.js) | Navigation and routes |
+| [src/components/Resume/resume.js](src/components/Resume/resume.js) | Resume state, colors, and printing |
+| [src/components/Editor/Editor.js](src/components/Editor/Editor.js) | Section forms and updates |
+| [src/components/Preview/Preview.js](src/components/Preview/Preview.js) | Resume presentation |
+| [src/components/InputControl](src/components/InputControl) | Shared form controls |
+
+## Development notes
+
+Keep editor fields and preview rendering aligned when adding a section. Check print layout as well as screen layout, especially for long resumes. The application uses React Router, React Bootstrap, React Feather, and CSS modules.
+
+The original README declared MIT licensing, but this repository currently has no separate license file. The earlier static performance badges are not reproduced as current test results.
